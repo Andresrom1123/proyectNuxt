@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <modal :titleName="modalNewsletter.name">{{ modalNewsletter }}</modal>
+    <modal :titleName="modalNewsletter.title" />
   </main>
 </template>
 <script>
@@ -71,7 +71,7 @@ export default {
     return {
       approved: [],
       noApproved: [],
-      modalNewsletter: { name: 'ss' },
+      modalNewsletter: [],
       urlApi: 'https://newsletters.academlo.com/api/v1'
     }
   },
@@ -87,7 +87,8 @@ export default {
         .then((response) => {
           this.filterApproved(response.data)
           this.filterNoApproved(response.data)
-          // console.log(this.newsletters)
+          this.modalNewsletter = response.data[0]
+          console.log(this.modalNewsletter)
         })
         .catch(() => {
           alert('Tuvimos un error')

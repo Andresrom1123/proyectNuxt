@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-center">
           <div
             class="overflow-hidden shadow rounded-circle "
-            style="margin-left:5rem;"
+            style="width:100%; height:100%; margin-left:5rem;"
           >
             <img class="" :src="image.image" alt="" width="100%" />
           </div>

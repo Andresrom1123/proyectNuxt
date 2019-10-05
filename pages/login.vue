@@ -1,5 +1,6 @@
 <template>
   <div class="container my-5">
+    <router-link to="/dashboard">Dashboard</router-link>
     <b-form @submit.prevent="onSubmit">
       <b-form-group
         id="input-group-1"
@@ -46,6 +47,7 @@ export default {
     onSubmit() {
       this.login(this.form)
       alert('Mandaste la informacion correctamente')
+      this.$router.push('/dashboard')
     }
   }
 }
