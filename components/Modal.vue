@@ -1,22 +1,22 @@
 <template>
   <div>
-    <b-modal id="bv-modal-example" hide-footer>
+    <b-modal :id="newsletter.id" hide-footer>
       <template v-slot:modal-title class="">
         <h2 class="m-auto">
-          {{ titleName }}
+          {{ newsletter.title }}
         </h2>
       </template>
       <div class="d-block text-center">
         <div class="">
           <div
-            class="border rounded-circle  m-auto"
+            class="border rounded-circle shadow overflow-hidden m-auto"
             style="width:80px; height:80px;"
           >
-            <img class="overflow-hidden" src="" alt="" width="100%" />
+            <img class="" :src="newsletter.image" alt="" width="100%" />
           </div>
           <div>
-            <p>
-              {{}}
+            <p class="text-muted">
+              {{ newsletter.description }}
             </p>
           </div>
           <div class="position-relative">
@@ -48,7 +48,7 @@
 <script>
 import axios from 'axios'
 export default {
-  props: ['image', 'description', 'titleName'],
+  props: ['newsletter'],
   data() {
     return {
       form: {

@@ -1,6 +1,5 @@
 <template>
   <div class="container my-5">
-    <router-link to="/dashboard">Dashboard</router-link>
     <b-form @submit.prevent="onSubmit">
       <b-form-group
         id="input-group-1"
@@ -32,6 +31,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 import { mapMutations } from 'vuex'
 export default {
   data() {
@@ -45,9 +45,28 @@ export default {
   methods: {
     ...mapMutations(['login']),
     onSubmit() {
-      this.login(this.form)
-      alert('Mandaste la informacion correctamente')
-      this.$router.push('/dashboard')
+      const endpoint = 'https://newsletters.academlo.com/api/v1/auth/login'
+      axios
+        .post(endpoint, this.form)
+        .then((response) => {
+          // Dirigimos la respuesta de la api a la constante user
+          const user = response.data
+          // Mandamos a llamar el método que mapea la mutación login
+          this.login(user)
+          // Redireccionamos al dashboard
+          this.$router.push('/dashboard')
+        })
+        .catch((error) => {
+          // Si el usuario no existe en la base de datos
+          if (error.response.status === 401) {
+            alert('no existe el usario en la base de datos')
+          } else if (error.response.status === 422) {
+            // Si esta enviando mal la informacion
+            alert('no estoy enviando bien la informacion')
+          } else {
+            alert('Tuvimos un error desconcido')
+          }
+        })
     }
   }
 }

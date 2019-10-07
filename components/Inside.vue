@@ -7,7 +7,7 @@
             class="overflow-hidden shadow rounded-circle "
             style="width:100%; height:100%; margin-left:5rem;"
           >
-            <img class="" :src="image.image" alt="" width="100%" />
+            <img class="" :src="newsletter.image" alt="" width="100%" />
           </div>
           <div class="ml-4">
             <p class="text-warning  rounded bg-orange-op p-1 f-1">
@@ -19,10 +19,10 @@
         </div>
         <div class="m-auto text-center">
           <h4 class="pt-2">
-            {{ titleTag.title }}
+            {{ newsletter.title }}
           </h4>
           <p class="text-muted">
-            {{ description.description }}
+            {{ newsletter.description }}
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@
       <div class="position-relative">
         <input
           id="show-btn"
-          @click="$bvModal.show('bv-modal-example')"
+          @click="$bvModal.show(newsletter.id)"
           value="Suscribe"
           class="btn btn-block btn-light text-muted text-left pl-5 py-2 border rounded"
           type="button"
@@ -51,6 +51,6 @@
 </template>
 <script>
 export default {
-  props: ['image', 'titleTag', 'description']
+  props: ['newsletter']
 }
 </script>

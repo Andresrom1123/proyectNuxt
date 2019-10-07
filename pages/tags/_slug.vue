@@ -16,15 +16,11 @@
           :key="newsletter.id"
           class="col-lg-3 col-sm-6"
         >
-          <inside
-            :image="newsletter"
-            :description="newsletter"
-            :titleTag="newsletter"
-          />
+          <inside :newsletter="newsletter" />
+          <modal :newsletter="newsletter" />
         </div>
       </div>
     </div>
-    <modal />
   </div>
 </template>
 <script>
