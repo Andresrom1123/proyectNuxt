@@ -10,7 +10,10 @@
             <img class="" :src="newsletter.image" alt="" width="100%" />
           </div>
           <div class="ml-4">
-            <p class="text-warning  rounded bg-orange-op p-1 f-1">
+            <p
+              class="text-warning  rounded p-1 f-1"
+              style="background:#ffa50026;"
+            >
               TWICE
               <br />
               WEEKLY
@@ -30,10 +33,10 @@
       <div class="position-relative">
         <input
           id="show-btn"
-          @click="$bvModal.show(newsletter.id)"
           value="Suscribe"
           class="btn btn-block btn-light text-muted text-left pl-5 py-2 border rounded"
           type="button"
+          @click="$bvModal.show(newsletter.id)"
         />
         <i
           class="position-absolute fas fa-envelope text-warning"

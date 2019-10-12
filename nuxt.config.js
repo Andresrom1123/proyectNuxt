@@ -17,7 +17,10 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: '/styles.css' }
+    ],
     script: [
       {src: "https://kit.fontawesome.com/effd4a3746.js"}
     ]
@@ -33,7 +36,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/vee-validate.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */

@@ -21,8 +21,8 @@
           </div>
           <div class="position-relative">
             <input
-              placeholder="Your Email"
               v-model="form.email"
+              placeholder="Your Email"
               class="btn-block pl-5 py-2 border rounded"
               type="email"
             />
@@ -63,7 +63,7 @@ export default {
       axios
         .post(url, this.form)
         .then((response) => {
-          console.log(response.data)
+          // console.log(response.data)
           alert('Se registro exitosamente')
         })
         .catch(() => {
