@@ -10,7 +10,7 @@
       </div>
       <div class="col-6 d-flex justify-content-end">
         <p class="text-warning pt-2 px-3"><i class="fas fa-search"></i></p>
-        <nuxt-link to="/login">
+        <nuxt-link to="/dashboard">
           <p class="text-warning pt-2 px-3"><i class="fas fa-user"></i></p>
         </nuxt-link>
         <p class="text-warning p-1 border border-warning rounded">

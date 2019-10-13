@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import {
-    ValidationProvider,
-    ValidationObserver
+  ValidationProvider,
+  ValidationObserver
 } from 'vee-validate/dist/vee-validate.full'
 
 Vue.component('ValidationProvider', ValidationProvider)
-Vue.component('ValidationProvider', ValidationObserver)
+Vue.component('ValidationObserver', ValidationObserver)

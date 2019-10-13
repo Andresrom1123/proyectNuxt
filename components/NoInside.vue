@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="shadow px-2 py-4">
+    <div class="shadow px-2 py-4 mb-5">
       <div class="">
         <div class="d-flex">
           <div
@@ -25,7 +25,7 @@
           value="Vote"
           class="btn btn-block btn-light text-muted text-left pl-5 py-2 border rounded"
           type="button"
-          @click="$bvModal.show(newsletter.id)"
+          @click="$bvModal.show('modal' + newsletter.id)"
         />
         <i
           class="position-absolute fas fa-envelope text-warning"
@@ -38,15 +38,14 @@
         >
         </i>
       </div>
-      <div class="progress my-2">
-        <div
-          :style="'width:' + newsletter.subscribed + '%'"
-          class="progress-bar bg-warning"
-          role="progressbar"
-          aria-valuenow="1"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
+      <div class="my-2">
+        <b-progress
+          :value="newsletter.subscribed"
+          :max="newsletter.target"
+          variant="warning"
+          class="mb-3"
+          animated
+        ></b-progress>
       </div>
       <div class="d-flex justify-content-between">
         <p class="mb-0 ml-3">

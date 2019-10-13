@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-modal :id="newsletter.id" hide-footer>
+    <b-modal :id="'modal' + newsletter.id" hide-footer>
       <template v-slot:modal-title class="">
         <h2 class="m-auto">
           {{ newsletter.title }}

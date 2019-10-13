@@ -22,9 +22,9 @@
           </div>
         </div>
         <div class="text-center">
-          <h4 v-if="approved.length === 0" class="text-danger">
-            ! No se encontro informacion
-          </h4>
+          <h2 v-if="approved.length === 0">
+            <i class="text-danger far fa-times-circle"></i>
+          </h2>
         </div>
       </div>
     </div>
@@ -51,9 +51,9 @@
           </div>
         </div>
         <div class="text-center">
-          <h4 v-if="noApproved.length === 0" class="text-danger">
-            ! No se encontro informacion
-          </h4>
+          <h2 v-if="noApproved.length === 0" class="text-danger">
+            <i class="text-danger far fa-times-circle"></i>
+          </h2>
         </div>
       </div>
     </div>

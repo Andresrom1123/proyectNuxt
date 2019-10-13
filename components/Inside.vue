@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="shadow px-2 py-4">
+    <div class="shadow px-2 py-4 mb-5">
       <div class="">
         <div class="d-flex justify-content-center">
           <div
@@ -36,7 +36,7 @@
           value="Suscribe"
           class="btn btn-block btn-light text-muted text-left pl-5 py-2 border rounded"
           type="button"
-          @click="$bvModal.show(newsletter.id)"
+          @click="$bvModal.show('modal' + newsletter.id)"
         />
         <i
           class="position-absolute fas fa-envelope text-warning"
