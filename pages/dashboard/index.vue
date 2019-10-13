@@ -11,6 +11,7 @@
       <template v-slot:cell(Options)="data">
         <div class="text-center">
           <b-button
+            class="p-0"
             id="show-btn"
             variant="link"
             @click="$bvModal.show('modal-delete' + data.item.id)"
@@ -20,6 +21,7 @@
             </span>
           </b-button>
           <b-button
+            class="p-0"
             variant="link"
             @click="$bvModal.show('modal-edit' + data.item.id)"
           >
@@ -68,19 +70,13 @@
             {{ newsletter.title }}
           </p>
         </template>
-        <form ref="form" @submit.stop.prevent="handleSubmit">
+        <form ref="form">
           <b-form-group
-            :state="nameState"
             label="Name"
             label-for="name-input"
             invalid-feedback="Name is required"
           >
-            <b-form-input
-              id="name-input"
-              v-model="name"
-              :state="nameState"
-              required
-            ></b-form-input>
+            <b-form-input id="name-input" required></b-form-input>
           </b-form-group>
         </form>
       </b-modal>
