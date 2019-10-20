@@ -18,8 +18,7 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href: '/styles.css' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
       {src: "https://kit.fontawesome.com/effd4a3746.js"}
@@ -32,7 +31,9 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    '~/assets/css/styles.sass'
+  ],
   /*
    ** Plugins to load before mounting the App
    */

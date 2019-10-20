@@ -14,9 +14,7 @@
               class="text-warning  rounded p-1 f-1"
               style="background:#ffa50026;"
             >
-              TWICE
-              <br />
-              WEEKLY
+              DAILY
             </p>
           </div>
         </div>

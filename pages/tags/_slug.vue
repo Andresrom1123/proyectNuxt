@@ -108,7 +108,7 @@ export default {
     // Aqui estamos haciendo un función, que consiste en filtrar los newsletter que no cumplen
     filterNoApproved(newsletters) {
       this.noApproved = newsletters.filter(function(newsletter) {
-        return newsletter.subscribed <= newsletter.target
+        return newsletter.subscribed < newsletter.target
       })
     }
   }

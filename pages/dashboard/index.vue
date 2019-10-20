@@ -34,6 +34,7 @@
     </b-table>
     <div>
       <b-modal
+        ref="my-modal"
         :id="'modal-delete' + newsletter.id"
         hide-footer
         v-for="newsletter in newsletters"
@@ -49,10 +50,19 @@
           <h3>Confirm delete this newsletter</h3>
         </div>
         <div class="d-flex justify-content-center">
-          <b-button class="mt-2 mr-2" variant="outline-danger">
+          <b-button
+            class="mt-2 mr-2"
+            variant="outline-danger"
+            @click.prevent="delet(newsletter.id)"
+            @click="$bvModal.hide('modal-delete' + newsletter.id)"
+          >
             Yes
           </b-button>
-          <b-button class="mt-2" variant="outline-success">
+          <b-button
+            class="mt-2"
+            variant="outline-success"
+            @click="$bvModal.hide('modal-delete' + newsletter.id)"
+          >
             No
           </b-button>
         </div>
@@ -72,11 +82,38 @@
         </template>
         <form ref="form">
           <b-form-group
-            label="Name"
-            label-for="name-input"
+            label="Title"
+            label-for="title-input"
             invalid-feedback="Name is required"
           >
-            <b-form-input id="name-input" required></b-form-input>
+            <b-form-input
+              style="width:80%;"
+              id="title-input"
+              :value="newsletter.title"
+              required
+            ></b-form-input>
+          </b-form-group>
+          <b-form-textarea
+            style="width:80%;"
+            id="textarea"
+            placeholder="Description"
+            rows="3"
+            max-rows="6"
+            :value="newsletter.description"
+          ></b-form-textarea>
+          <b-form-group
+            class="mt-2 text-muted"
+            id="input-group-1"
+            label="Target:"
+            label-for="input-2"
+          >
+            <b-form-input
+              style="width:20%;"
+              id="input-2"
+              type="number"
+              placeholder=""
+              :value="newsletter.target"
+            ></b-form-input>
           </b-form-group>
         </form>
       </b-modal>
@@ -123,6 +160,20 @@ export default {
         .catch(() => {
           alert('Tuvimos un error')
         })
+    },
+    delet(id) {
+      const endpoint =
+        'https://newsletters.academlo.com/api/v1/newsletters/' + id
+      axios
+        .delete(endpoint)
+        .then(() => {
+          alert('Se elemino')
+        })
+        .catch(() => {
+          alert('Tuvimos un error')
+        })
+      // const del = this.newsletters[index]
+      // console.log(del)
     }
   }
 }
